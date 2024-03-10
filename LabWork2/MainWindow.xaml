@@ -28,6 +28,6 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Hello" Grid.ColumnSpan="4" x:Name="resultLabel" />
-         
+        <Button x:Name="Button1" Grid.Column="0" Grid.Row="1" Content="1"  /> 
     </Grid>
 </Window>
