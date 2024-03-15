@@ -5,29 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LabWork2"
         mc:Ignorable="d"
-        Title="Calculator" Height="350" Width="500" WindowStyle="ThreeDBorderWindow">
-    <Grid x:Name="MainRoot" Background="White">
+        x:Name="Main"
+        
+        Title="Calculator" Background="#000000" Width="470" Height="610" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <Style TargetType="Button">
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="3, 3, 3, 3"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border Name="backgroundElement"  BorderThickness="0" CornerRadius="25" Background="{TemplateBinding Background}"/>
+                            <ContentPresenter HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextElement.FontWeight="{TemplateBinding FontWeight}"
+                   TextElement.Foreground="{TemplateBinding Foreground}"
+                   TextElement.FontSize="{TemplateBinding FontSize}"
+                   TextElement.FontFamily="{TemplateBinding FontFamily}">
+                            </ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="backgroundElement" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="orangeButton">
+            <Setter Property="Background" Value="#FE9E09"/>
+            <Setter Property="BorderBrush" Value="#FBC78E"/>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="darkGreyButton">
+            <Setter Property="Background" Value="#343434"/>
+            <Setter Property="BorderBrush" Value="#737373"/>
+        </Style>
+
+
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="blueButton">
+            <Setter Property="Background" Value="#4285F4"/>
+            <Setter Property="BorderBrush" Value="#95b6ed"/>
+        </Style>
+
+    </Window.Resources>
+
+
+
+
+    <Grid x:Name="MainRoot" >
+
         <Grid.RowDefinitions>
-            
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition/>
-            
+            <RowDefinition />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
-            
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
-            
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Hello" Grid.ColumnSpan="4" x:Name="resultLabel" />
-        <Button x:Name="Button1" Grid.Column="0" Grid.Row="1" Content="1"  /> 
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness="2" Margin="10">
+            <TextBox x:Name="ResultTextBlock"  FontSize="60" Foreground="Black" TextAlignment="Right"  />
+        </Border>
+
+
+        <Button x:Name="Button1" Grid.Column="0" Grid.Row="2" Content="1" Click="Button1_Click" />
+        <Button x:Name="Button2" Grid.Column="1" Grid.Row="2" Content="2" Click="Button2_Click" />
+        <Button x:Name="Button3" Grid.Column="2" Grid.Row="2" Content="3" Click="Button3_Click" />
+        <Button x:Name="Button4" Grid.Column="0" Grid.Row="3" Content="4" Click="Button4_Click" />
+        <Button x:Name="Button5" Grid.Column="1" Grid.Row="3" Content="5" Click="Button5_Click" />
+        <Button x:Name="Button6" Grid.Column="2" Grid.Row="3" Content="6" Click="Button6_Click" />
+        <Button x:Name="Button7" Grid.Column="0" Grid.Row="4" Content="7" Click="Button7_Click" />
+        <Button x:Name="Button8" Grid.Column="1" Grid.Row="4" Content="8" Click="Button8_Click" />
+        <Button x:Name="Button9" Grid.Column="2" Grid.Row="4" Content="9" Click="Button9_Click" />
+        <Button x:Name="Button0" Grid.Column="0" Grid.Row="5" Content="0" Grid.ColumnSpan="2" Click="Button0_Click" />
+
+        <Button x:Name="ButtonPlus" Grid.Column="3" Grid.Row="4" Content="+"  Style= "{StaticResource orangeButton}" Click="ButtonPlus_Click"/>
+
+        <Button x:Name="ButtonEqually" Grid.Column="3" Grid.Row="1" Content="=" Style= "{StaticResource orangeButton}" Click="ButtonEqually_Click" />
+
+        <Button x:Name="ButtonMultiply" Grid.Column="3" Grid.Row="5" Content="*" Style= "{StaticResource orangeButton}" Click="ButtonMultiply_Click" />
+
+        <Button x:Name="ButtonMinus" Grid.Column="3" Grid.Row="3" Content="-" Style= "{StaticResource orangeButton}" Click="ButtonMinus_Click"/>
+
+        <Button x:Name="ButtonDivision" Grid.Column="3" Grid.Row="2" Content="/" Style= "{StaticResource orangeButton}" Click="ButtonDivision_Click"/>
+
+        <Button x:Name="ButtonFractional" Grid.Column="2" Grid.Row="5" Content="," Click="ButtonFractional_Click"/>
+
+        <Button x:Name="ButtonClean" Grid.Column="0" Grid.Row="1" Content="C" Style="{StaticResource blueButton}" Click="ButtonClean_Click"/>
+
+        <Button x:Name="ButtonClearOneSymbol" Grid.Column="1" Grid.Row="1" Content="⟵" Style="{StaticResource blueButton}" Click="ButtonClearOneSymbol_Click"/>
+
+
+        <Button x:Name="ButtonDelete" Grid.Column="2" Grid.Row="1" Content="±" Style="{StaticResource blueButton}" Click="ButtonDelete_Click"/>
+
+        
+
     </Grid>
+
+
+    
+    
 </Window>
