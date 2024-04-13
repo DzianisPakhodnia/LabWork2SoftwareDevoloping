@@ -16,7 +16,7 @@ namespace LabWork2
             InitializeComponent();
 
         }
-
+        Calculator calculator = new Calculator();
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             ResultTextBlock.Text += "1";
@@ -66,8 +66,6 @@ namespace LabWork2
             ResultTextBlock.Text += "0";
         }
 
-        
-
         private void ButtonClean_Click(object sender, RoutedEventArgs e)
         {
             ResultTextBlock.Text = string.Empty;
@@ -110,27 +108,40 @@ namespace LabWork2
 
         private void ButtonDivision_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text += "/";
+            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
+            ResultTextBlock.Text = "";
+            calculator.operation = '/';
+
         }
 
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text += "+";
+            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
+            ResultTextBlock.Text = "";
+            calculator.operation = '+';
+            
         }
 
         private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text += "*";
+            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
+            ResultTextBlock.Text = "";
+            calculator.operation = '*';
         }
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text += "-";
+            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
+            ResultTextBlock.Text = "";
+            calculator.operation = '-';
         }
 
         private void ButtonEqually_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text = new DataTable().Compute(ResultTextBlock.Text, "").ToString();
+            //ResultTextBlock.Text = new DataTable().Compute(ResultTextBlock.Text, "").ToString();
+            calculator.secondValue = Convert.ToDouble(ResultTextBlock.Text);
+            ResultTextBlock.Text = Convert.ToString(calculator.PerformOperation());
+
         }
 
 

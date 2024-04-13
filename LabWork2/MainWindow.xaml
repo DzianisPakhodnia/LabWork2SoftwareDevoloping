@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         x:Name="Main"
         
-        Title="Calculator" Background="#000000" Width="470" Height="610" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+        Title="Calculator" Background="#000000" Width="470" Height="610"  WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-
         <Style TargetType="Button">
             <Setter Property="MinHeight" Value="50"/>
             <Setter Property="MinWidth" Value="50"/>
@@ -42,9 +41,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
         </Style>
-
         <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="orangeButton">
             <Setter Property="Background" Value="#FE9E09"/>
             <Setter Property="BorderBrush" Value="#FBC78E"/>
@@ -63,9 +60,6 @@
         </Style>
 
     </Window.Resources>
-
-
-
 
     <Grid x:Name="MainRoot" >
 
@@ -86,7 +80,7 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness="2" Margin="10">
-            <TextBox x:Name="ResultTextBlock"  FontSize="60" Foreground="Black" TextAlignment="Right"  />
+            <TextBox x:Name="ResultTextBlock"  FontSize="60" Foreground="White" Background="Black" TextAlignment="Left" Text=""   />
         </Border>
 
 
@@ -116,7 +110,6 @@
         <Button x:Name="ButtonClean" Grid.Column="0" Grid.Row="1" Content="C" Style="{StaticResource blueButton}" Click="ButtonClean_Click"/>
 
         <Button x:Name="ButtonClearOneSymbol" Grid.Column="1" Grid.Row="1" Content="⟵" Style="{StaticResource blueButton}" Click="ButtonClearOneSymbol_Click"/>
-
 
         <Button x:Name="ButtonDelete" Grid.Column="2" Grid.Row="1" Content="±" Style="{StaticResource blueButton}" Click="ButtonDelete_Click"/>
 
