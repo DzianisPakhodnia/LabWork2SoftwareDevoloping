@@ -119,7 +119,6 @@ namespace LabWork2
             calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
             ResultTextBlock.Text = "";
             calculator.operation = '+';
-            
         }
 
         private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
@@ -138,7 +137,7 @@ namespace LabWork2
 
         private void ButtonEqually_Click(object sender, RoutedEventArgs e)
         {
-            //ResultTextBlock.Text = new DataTable().Compute(ResultTextBlock.Text, "").ToString();
+
             calculator.secondValue = Convert.ToDouble(ResultTextBlock.Text);
             ResultTextBlock.Text = Convert.ToString(calculator.PerformOperation());
 

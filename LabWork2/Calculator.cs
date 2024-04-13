@@ -30,8 +30,6 @@ namespace LabWork2
                     throw new ArgumentException("Invalid operation.");
             }
         }
-
-
         public double Add()
         {
             result = firstValue+secondValue;
@@ -52,7 +50,6 @@ namespace LabWork2
             firstValue = result;
             return result;
         }
-
         public double Divide()
         {
             try
@@ -61,18 +58,10 @@ namespace LabWork2
                 firstValue = result;
                 return result;
             }
-            catch (DivideByZeroException ex)
+            catch 
             {
                 return result;
             }
         }
-
-
-
-
-
-
-
-
     }
 }
