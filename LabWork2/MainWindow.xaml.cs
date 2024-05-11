@@ -77,6 +77,11 @@ namespace LabWork2
 
 
 
+
+
+
+
+
         private void ButtonOperation_Click(object sender, RoutedEventArgs e)
         {
             calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
