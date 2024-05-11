@@ -73,27 +73,12 @@ namespace LabWork2
 
         }
 
-        private void ButtonPlus_Click(object sender, RoutedEventArgs e)
+        private void ButtonOperation_Click(object sender, RoutedEventArgs e)
         {
             calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
             ResultTextBlock.Text = "";
-            calculator.operation = '+';
+            calculator.operation = ((Button)sender).Content.ToString()[0];
         }
-
-        private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
-        {
-            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
-            ResultTextBlock.Text = "";
-            calculator.operation = '*';
-        }
-
-        private void ButtonMinus_Click(object sender, RoutedEventArgs e)
-        {
-            calculator.firstValue = Convert.ToDouble(ResultTextBlock.Text);
-            ResultTextBlock.Text = "";
-            calculator.operation = '-';
-        }
-
         private void ButtonEqually_Click(object sender, RoutedEventArgs e)
         {
 
