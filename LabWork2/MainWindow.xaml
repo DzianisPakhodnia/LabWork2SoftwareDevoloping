@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         x:Name="Main"
         
-        Title="Calculator" Background="#000000" Width="470" Height="610"  WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
-
+        Title="" Background="#000000" Width="470" Height="610"  WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="MinHeight" Value="50"/>
@@ -84,16 +83,16 @@
         </Border>
 
 
-        <Button x:Name="Button1" Grid.Column="0" Grid.Row="2" Content="1" Click="Button1_Click" />
-        <Button x:Name="Button2" Grid.Column="1" Grid.Row="2" Content="2" Click="Button2_Click" />
-        <Button x:Name="Button3" Grid.Column="2" Grid.Row="2" Content="3" Click="Button3_Click" />
-        <Button x:Name="Button4" Grid.Column="0" Grid.Row="3" Content="4" Click="Button4_Click" />
-        <Button x:Name="Button5" Grid.Column="1" Grid.Row="3" Content="5" Click="Button5_Click" />
-        <Button x:Name="Button6" Grid.Column="2" Grid.Row="3" Content="6" Click="Button6_Click" />
-        <Button x:Name="Button7" Grid.Column="0" Grid.Row="4" Content="7" Click="Button7_Click" />
-        <Button x:Name="Button8" Grid.Column="1" Grid.Row="4" Content="8" Click="Button8_Click" />
-        <Button x:Name="Button9" Grid.Column="2" Grid.Row="4" Content="9" Click="Button9_Click" />
-        <Button x:Name="Button0" Grid.Column="0" Grid.Row="5" Content="0" Grid.ColumnSpan="2" Click="Button0_Click" />
+        <Button x:Name="Button1" Grid.Column="0" Grid.Row="2" Content="1" Click="Button_Click" />
+        <Button x:Name="Button2" Grid.Column="1" Grid.Row="2" Content="2" Click="Button_Click" />
+        <Button x:Name="Button3" Grid.Column="2" Grid.Row="2" Content="3" Click="Button_Click" />
+        <Button x:Name="Button4" Grid.Column="0" Grid.Row="3" Content="4" Click="Button_Click" />
+        <Button x:Name="Button5" Grid.Column="1" Grid.Row="3" Content="5" Click="Button_Click" />
+        <Button x:Name="Button6" Grid.Column="2" Grid.Row="3" Content="6" Click="Button_Click" />
+        <Button x:Name="Button7" Grid.Column="0" Grid.Row="4" Content="7" Click="Button_Click" />
+        <Button x:Name="Button8" Grid.Column="1" Grid.Row="4" Content="8" Click="Button_Click" />
+        <Button x:Name="Button9" Grid.Column="2" Grid.Row="4" Content="9" Click="Button_Click" />
+        <Button x:Name="Button0" Grid.Column="0" Grid.Row="5" Content="0" Grid.ColumnSpan="2" Click="Button_Click" />
 
         <Button x:Name="ButtonPlus" Grid.Column="3" Grid.Row="4" Content="+"  Style= "{StaticResource orangeButton}" Click="ButtonPlus_Click"/>
 
@@ -112,12 +111,5 @@
         <Button x:Name="ButtonClearOneSymbol" Grid.Column="1" Grid.Row="1" Content="⟵" Style="{StaticResource blueButton}" Click="ButtonClearOneSymbol_Click"/>
 
         <Button x:Name="ButtonDelete" Grid.Column="2" Grid.Row="1" Content="±" Style="{StaticResource blueButton}" Click="ButtonDelete_Click"/>
-
-        
-
     </Grid>
-
-
-    
-    
 </Window>

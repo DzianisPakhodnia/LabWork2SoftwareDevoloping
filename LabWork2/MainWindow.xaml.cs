@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 
 namespace LabWork2
@@ -17,54 +18,12 @@ namespace LabWork2
 
         }
         Calculator calculator = new Calculator();
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text += "1";
+            string buttonNumber = ((Button)sender).Content.ToString();
+            ResultTextBlock.Text += buttonNumber;
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "2";
-        }
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "3";
-
-        }
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "4";
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "5";
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "6";
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "7";
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "8";
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "9";
-        }
-
-        private void Button0_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text += "0";
-        }
 
         private void ButtonClean_Click(object sender, RoutedEventArgs e)
         {
